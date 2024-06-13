@@ -1,0 +1,35 @@
+var _____WB$wombat$assign$function_____ = function(name) {return (self._wb_wombat && self._wb_wombat.local_init && self._wb_wombat.local_init(name)) || self[name]; };
+if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; return this; } }
+{
+  let window = _____WB$wombat$assign$function_____("window");
+  let self = _____WB$wombat$assign$function_____("self");
+  let document = _____WB$wombat$assign$function_____("document");
+  let location = _____WB$wombat$assign$function_____("location");
+  let top = _____WB$wombat$assign$function_____("top");
+  let parent = _____WB$wombat$assign$function_____("parent");
+  let frames = _____WB$wombat$assign$function_____("frames");
+  let opener = _____WB$wombat$assign$function_____("opener");
+
+!function(){"use strict";var e,t,n,r,f,c={},a={};function o(e){var t=a[e];if(void 0!==t)return t.exports;var n=a[e]={exports:{}};return c[e].call(n.exports,n,n.exports,o),n.exports}o.m=c,e=[],o.O=function(t,n,r,f){if(!n){var c=1/0;for(b=0;b<e.length;b++){n=e[b][0],r=e[b][1],f=e[b][2];for(var a=!0,u=0;u<n.length;u++)(!1&f||c>=f)&&Object.keys(o.O).every((function(e){return o.O[e](n[u])}))?n.splice(u--,1):(a=!1,f<c&&(c=f));if(a){e.splice(b--,1);var i=r();void 0!==i&&(t=i)}}return t}f=f||0;for(var b=e.length;b>0&&e[b-1][2]>f;b--)e[b]=e[b-1];e[b]=[n,r,f]},o.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return o.d(t,{a:t}),t},n=Object.getPrototypeOf?function(e){return Object.getPrototypeOf(e)}:function(e){return e.__proto__},o.t=function(e,r){if(1&r&&(e=this(e)),8&r)return e;if("object"==typeof e&&e){if(4&r&&e.__esModule)return e;if(16&r&&"function"==typeof e.then)return e}var f=Object.create(null);o.r(f);var c={};t=t||[null,n({}),n([]),n(n)];for(var a=2&r&&e;"object"==typeof a&&!~t.indexOf(a);a=n(a))Object.getOwnPropertyNames(a).forEach((function(t){c[t]=function(){return e[t]}}));return c.default=function(){return e},o.d(f,c),f},o.d=function(e,t){for(var n in t)o.o(t,n)&&!o.o(e,n)&&Object.defineProperty(e,n,{enumerable:!0,get:t[n]})},o.f={},o.e=function(e){return Promise.all(Object.keys(o.f).reduce((function(t,n){return o.f[n](e,t),t}),[]))},o.u=function(e){return"assets/js/"+({11:"9a94988b",46:"d8ba401a",53:"935f2afb",55:"b1063511",59:"fd1f5770",70:"9f595a10",111:"c1bcbd07",131:"0aed1168",146:"7995a947",167:"11172cb5",173:"c21c514e",217:"bf5e8be9",237:"1df93b7f",286:"55898f30",294:"b42495f8",334:"751a3bff",339:"603d293f",372:"81b92de5",384:"14e966ef",434:"601a4509",443:"ac87fab3",514:"1be78505",534:"cb457ad9",545:"3784386e",546:"13c51dd8",564:"799f5cb5",587:"cb5987ff",624:"1609aa2b",692:"65128e3f",785:"54beec48",786:"c10fca3c",802:"e5088ceb",816:"74ea5fa6",898:"da81e86c",915:"4cec33da",918:"17896441",920:"1a4e3797",943:"c4de80f8",964:"0f7ee1f2",971:"c377a04b",981:"ba76b8a1"}[e]||e)+"."+{11:"24ad15fa",46:"63cd9e1a",53:"f21ee461",55:"5ba98740",59:"250a546f",68:"d3b85e6d",70:"86ad5254",111:"c6746b36",131:"5223b812",146:"f7ad8b25",167:"0f29195e",173:"b04e8026",217:"95d08d6a",237:"3e33d3d6",286:"9761ffc3",294:"e17d87e5",334:"7735050f",339:"0c848722",372:"bf88eef0",384:"953691d9",434:"0947513a",441:"fdac8f30",443:"0d006faf",514:"90a4d3c1",534:"e730dd49",545:"1582efbc",546:"bf835e1e",564:"b6aa0945",587:"5e7fce3b",608:"ea18e17e",624:"1b9a0f9a",692:"b980018f",785:"5642ac85",786:"57698328",802:"78630989",815:"945233cb",816:"46599c4c",894:"55fedcec",898:"37ad721c",915:"926ed862",918:"a0e7aa88",920:"b4d93744",943:"d5d41fff",945:"527b22cc",964:"e186bd38",971:"d1bd5005",981:"1135dee9"}[e]+".js"},o.miniCssF=function(e){},o.g=function(){if("object"==typeof globalThis)return globalThis;try{return this||new Function("return this")()}catch(e){if("object"==typeof window)return window}}(),o.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},r={},f="unicore-docs:",o.l=function(e,t,n,c){if(r[e])r[e].push(t);else{var a,u;if(void 0!==n)for(var i=document.getElementsByTagName("script"),b=0;b<i.length;b++){var d=i[b];if(d.getAttribute("src")==e||d.getAttribute("data-webpack")==f+n){a=d;break}}a||(u=!0,(a=document.createElement("script")).charset="utf-8",a.timeout=120,o.nc&&a.setAttribute("nonce",o.nc),a.setAttribute("data-webpack",f+n),a.src=e),r[e]=[t];var l=function(t,n){a.onerror=a.onload=null,clearTimeout(s);var f=r[e];if(delete r[e],a.parentNode&&a.parentNode.removeChild(a),f&&f.forEach((function(e){return e(n)})),t)return t(n)},s=setTimeout(l.bind(null,void 0,{type:"timeout",target:a}),12e4);a.onerror=l.bind(null,a.onerror),a.onload=l.bind(null,a.onload),u&&document.head.appendChild(a)}},o.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},o.p="/",o.gca=function(e){return e={17896441:"918","9a94988b":"11",d8ba401a:"46","935f2afb":"53",b1063511:"55",fd1f5770:"59","9f595a10":"70",c1bcbd07:"111","0aed1168":"131","7995a947":"146","11172cb5":"167",c21c514e:"173",bf5e8be9:"217","1df93b7f":"237","55898f30":"286",b42495f8:"294","751a3bff":"334","603d293f":"339","81b92de5":"372","14e966ef":"384","601a4509":"434",ac87fab3:"443","1be78505":"514",cb457ad9:"534","3784386e":"545","13c51dd8":"546","799f5cb5":"564",cb5987ff:"587","1609aa2b":"624","65128e3f":"692","54beec48":"785",c10fca3c:"786",e5088ceb:"802","74ea5fa6":"816",da81e86c:"898","4cec33da":"915","1a4e3797":"920",c4de80f8:"943","0f7ee1f2":"964",c377a04b:"971",ba76b8a1:"981"}[e]||e,o.p+o.u(e)},function(){var e={303:0,532:0};o.f.j=function(t,n){var r=o.o(e,t)?e[t]:void 0;if(0!==r)if(r)n.push(r[2]);else if(/^(303|532)$/.test(t))e[t]=0;else{var f=new Promise((function(n,f){r=e[t]=[n,f]}));n.push(r[2]=f);var c=o.p+o.u(t),a=new Error;o.l(c,(function(n){if(o.o(e,t)&&(0!==(r=e[t])&&(e[t]=void 0),r)){var f=n&&("load"===n.type?"missing":n.type),c=n&&n.target&&n.target.src;a.message="Loading chunk "+t+" failed.\n("+f+": "+c+")",a.name="ChunkLoadError",a.type=f,a.request=c,r[1](a)}}),"chunk-"+t,t)}},o.O.j=function(t){return 0===e[t]};var t=function(t,n){var r,f,c=n[0],a=n[1],u=n[2],i=0;if(c.some((function(t){return 0!==e[t]}))){for(r in a)o.o(a,r)&&(o.m[r]=a[r]);if(u)var b=u(o)}for(t&&t(n);i<c.length;i++)f=c[i],o.o(e,f)&&e[f]&&e[f][0](),e[f]=0;return o.O(b)},n=self.webpackChunkunicore_docs=self.webpackChunkunicore_docs||[];n.forEach(t.bind(null,0)),n.push=t.bind(null,n.push.bind(n))}()}();
+
+}
+/*
+     FILE ARCHIVED ON 16:53:40 Oct 23, 2022 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 20:07:32 Jun 13, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 9.084
+  exclusion.robots: 7.97
+  exclusion.robots.policy: 7.945
+  esindex: 0.014
+  cdx.remote: 21.607
+  LoadShardBlock: 71.472 (3)
+  PetaboxLoader3.datanode: 69.717 (4)
+  load_resource: 161.253
+  PetaboxLoader3.resolve: 92.34
+*/
