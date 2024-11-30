@@ -19,6 +19,18 @@ img {
 	margin-bottom: calc(var(--ifm-heading-vertical-rhythm-bottom)*var(--ifm-leading))
 }
 
+
+.screenshot-item {
+    margin-bottom: 15px; /* Отступ между блоками */
+}
+
+.screenshot-comment {
+    font-size: 14px;
+    color: #ccc; /* Цвет текста комментария */
+    margin-top: 5px; /* Отступ от изображения */
+    text-align: center; /* Выравнивание по центру */
+}
+
 .spoiler {
     margin-top: 10px;
 }
