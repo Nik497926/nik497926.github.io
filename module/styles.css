@@ -19,6 +19,68 @@ img {
 	margin-bottom: calc(var(--ifm-heading-vertical-rhythm-bottom)*var(--ifm-leading))
 }
 
+.spoiler {
+    margin-top: 10px;
+}
+
+.spoiler-button {
+    display: inline-block;
+    background-color: #0088cc;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.spoiler-button:hover {
+    background-color: #006fa1;
+}
+
+.spoiler-content {
+    display: none;
+    margin-top: 10px;
+}
+
+.spoiler-content img {
+    max-width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.button-container2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.telegram-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0088cc;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.telegram-button:hover {
+    background-color: #006fa1;
+}
+
+.button-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
 pre,
 table {
 	overflow: auto
