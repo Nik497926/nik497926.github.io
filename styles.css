@@ -2773,6 +2773,12 @@ html[data-theme=dark] {
     font-size: 16px; /* Размер текста, настройте под ваш дизайн */
 }
 
+.alert-danger {
+    color: #ea868f;
+    background: #2c0b0e;
+    border-color: #842029;
+}
+
 .header-telegram-link:before {
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' style='fill:%23000'%3E%3Cpath d='M12 0a12 12 0 1 0 12 12A12 12 0 0 0 12 0Zm4.23 8.52-1.9 9c-.15.68-.55.85-1.1.52l-3.07-2.26-1.49.94a.72.72 0 0 1-.88-.13l.35-1.63 5.94-5.37c.26-.26-.06-.4-.41-.14l-7.34 4.6-1.6-.5c-.68-.21-.69-.68.15-1l9.69-3.73c.45-.18.84.11.69.87Z'/%3E%3C/svg%3E");
     content: "";

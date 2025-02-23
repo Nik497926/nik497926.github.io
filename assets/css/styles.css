@@ -19,6 +19,12 @@ img {
 	margin-bottom: calc(var(--ifm-heading-vertical-rhythm-bottom)*var(--ifm-leading))
 }
 
+.alert-danger {
+    color: #ea868f;
+    background: #2c0b0e;
+    border-color: #842029;
+}
+
 pre,
 table {
 	overflow: auto
