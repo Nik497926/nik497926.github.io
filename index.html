@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-theme="dark">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,314 +7,497 @@
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="navbar__inner">
-            <a href="https://unicorecms2.ru/" class="navbar__brand">
-                <div class="navbar__logo">
-                    <img src="img/logo.png" alt="UnicoreCMS 2.0">
+    <div class="page-wrapper">
+        <!-- Шапка с анимированным фоном -->
+        <header class="header">
+            <div class="header__container">
+                <div class="header__left">
+                    <a href="/" class="header__logo">
+                        <img src="img/logo.png" alt="UnicoreCMS 2.0">
+                    </a>
+                    <nav class="header__nav">
+                        <a href="#features" class="header__link">Возможности</a>
+                        <a href="#services" class="header__link">Услуги</a>
+                        <a href="#modules" class="header__link">Модули</a>
+                    </nav>
                 </div>
-                <span>UnicoreCMS 2.0</span>
-            </a>
-			<a href="https://gml.recloud.tech" class="navbar__brand">
-                <div class="navbar__logo">
-                    <img src="img/GML.png" alt="GML Launcher">
-                </div>
-                <span>GML Launcher</span>
-            </a>
-            <button class="navbar__mobile-toggle" aria-label="Открыть меню">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <div class="navbar__items">
-                <a href="https://t.me/nikita497926" class="button button--secondary">По вопросам</a>
-                <a href="https://t.me/unicore_applications_bot" class="button button--secondary">Заявка на покупку</a>
-                <a href="https://demo.unicorecms2.ru" class="button button--primary">Demo Версия</a>
-            </div>
-        </div>
-    </nav>
-
-    <section class="hero">
-        <div class="container">
-            <div class="hero__content">
-                <h1 class="hero__title">UnicoreCMS 2.0</h1>
-                <h2 class="hero__subtitle">Обновленное CMS</h2>
-                <p class="hero__description">
-                    CMS для модовых проектов Minecraft. Современные технологии и профессиональный подход, 
-                    невероятная производительность и скорость. А также обновленный функционал, новые модули, 
-                    новые возможности.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section class="features">
-        <div class="container">
-            <h2 class="section-title">Преимущества</h2>
-            <p class="section-subtitle">Почему стоит выбрать UnicoreCMS 2.0</p>
-            
-            <div class="features__grid">
-                <div class="feature-card">
-                    <div class="feature-card__content">
-                        <img src="img/icons/safe.webp" alt="Надёжность" class="feature-card__icon">
-                        <h3 class="feature-card__title">Надёжная</h3>
-                        <p class="feature-card__description">Проверена в производственной среде</p>
+                <div class="header__right">
+                    <a href="https://gml.recloud.tech" class="header__gml">
+                        <img src="img/GML.png" alt="GML Launcher">
+                        <span>GML Launcher</span>
+                    </a>
+                    <div class="header__buttons">
+                        <a href="https://demo.unicorecms2.ru" class="button button--demo">Demo Версия</a>
+                        <a href="https://t.me/unicore_applications_bot" class="button button--primary">Заказать</a>
                     </div>
                 </div>
                 
-                <div class="feature-card">
-                    <div class="feature-card__content">
-                        <img src="img/icons/speed.webp" alt="Скорость" class="feature-card__icon">
-                        <h3 class="feature-card__title">Быстрая</h3>
-                        <p class="feature-card__description">Каждый компонент оптимизирован и обработает сверх-много запросов за сверх-мало времени</p>
+            </div>
+        </header>
+
+        <!-- Главный экран -->
+        <section class="hero">
+            <div class="hero__grid">
+                <div class="hero__content">
+                    <h1 class="hero__title">UnicoreCMS 2.0</h1>
+                    <p class="hero__subtitle">Новое поколение CMS для Minecraft</p>
+                    <div class="hero__features">
+                        <div class="hero__feature">
+                            <div class="hero__feature-icon">⚡</div>
+                            <div class="hero__feature-text">Высокая производительность</div>
+                        </div>
+                        <div class="hero__feature">
+                            <div class="hero__feature-icon">🛡️</div>
+                            <div class="hero__feature-text">Безопасность данных</div>
+                        </div>
+                        <div class="hero__feature">
+                            <div class="hero__feature-icon">🔄</div>
+                            <div class="hero__feature-text">Автоматизация процессов</div>
+                        </div>
+                    </div>
+                    <div class="hero__buttons">
+                        <a href="#services" class="button button--primary">Выбрать услугу</a>
+                        <a href="https://demo.unicorecms2.ru" class="button button--outline">Попробовать демо</a>
                     </div>
                 </div>
-                
-                <div class="feature-card">
-                    <div class="feature-card__content">
-                        <img src="img/icons/security.webp" alt="Безопасность" class="feature-card__icon">
-                        <h3 class="feature-card__title">Безопасная</h3>
-                        <p class="feature-card__description">На ряду с актуальными версиями пакетов и современным концептом работы — неуязвима</p>
+                <div class="hero__visual">
+                    <div class="hero__stats">
+                        <div class="hero__stat">
+                            <div class="hero__stat-number">30+</div>
+                            <div class="hero__stat-label">Проектов у нас обслуживается</div>
+                        </div>
+                        <div class="hero__stat">
+                            <div class="hero__stat-number">14+</div>
+                            <div class="hero__stat-label">Интегрированных компонентов</div>
+                        </div>
+                        <div class="hero__stat">
+                            <div class="hero__stat-number">8+</div>
+                            <div class="hero__stat-label">E-Commerce функций</div>
+                        </div>
+                        <div class="hero__stat">
+                            <div class="hero__stat-number">5+</div>
+                            <div class="hero__stat-label">Внешних компонентов</div>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="feature-card">
-                    <div class="feature-card__content">
-                        <img src="img/icons/database.webp" alt="База данных" class="feature-card__icon">
-                        <h3 class="feature-card__title">Не зависима от БД</h3>
-                        <p class="feature-card__description">Поддерживает MySQL, MariaDB, MongoDB, Postgres, CockroachDB, SQLite, Microsoft SQL Server, Oracle или SAP Hana</p>
-                    </div>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-card__content">
-                        <img src="img/icons/integration.webp" alt="Интеграция" class="feature-card__icon">
-                        <h3 class="feature-card__title">Легко интегрируема</h3>
-                        <p class="feature-card__description">Свои решения для простой интеграции с лаунчером и сервером</p>
-                    </div>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-card__content">
-                        <img src="img/icons/source.webp" alt="OpenSource" class="feature-card__icon">
-                        <h3 class="feature-card__title">OpenSource</h3>
-                        <p class="feature-card__description">Нам нечего скрывать и вы можете это увидеть. OpenSource является только первая версия UnicoreCMS. Версия UnicoreCMS 2.0 - является платной!</p>
-                    </div>
+            </div>
+        </section>
+
+        <!-- Предупреждение -->
+        <div class="warning">
+            <div class="warning__container">
+                <div class="warning__icon">⚠️</div>
+                <div class="warning__content">
+                    <h2>ВНИМАНИЕ!</h2>
+                    <p>UnicoreCMS 2.0 работает ИСКЛЮЧИТЕЛЬНО с GML-Launcher!</p>
+                    <p>GravitLauncher и прочие лаунчеры не поддерживаются!</p>
                 </div>
             </div>
         </div>
-    </section>
 
-    <section class="pricing">
-        <div class="container">
-            <div class="alert-danger">
-                <h2>ВНИМАНИЕ, UnicoreCMS 2.0 РАБОТАЕТ ИСКЛЮЧИТЕЛЬНО С GML-Launcher!</h2>
-                <h3>GravitLauncher и прочие лаунчеры не поддерживаются!</h3>
+        <!-- Основные услуги -->
+        <section id="services" class="services">
+            <div class="services__container">
+                <h2 class="section-title">Основные услуги по UnicoreCMS</h2>
+                <div class="services__grid">
+                    <!-- Установка -->
+                    <div class="service-card">
+                        <div class="service-card__header">
+                            <h3>⚡ Установка UnicoreCMS</h3>
+                            <div class="service-card__price">3.500 ₽</div>
+                        </div>
+                        <div class="service-card__content">
+                            <ul class="service-card__features">
+                                <li>Полная установка системы</li>
+                                <li>Базовая настройка</li>
+                                <li>Интеграция с GML-Launcher</li>
+                            </ul>
+                            <a href="https://t.me/unicore_applications_bot" class="service-card__button">Заказать</a>
+                        </div>
+                    </div>
+
+                    <!-- Заявка в персонал -->
+                    <div class="service-card">
+                        <div class="service-card__header">
+                            <h3>⚡ Модуль "Заявка в персонал"</h3>
+                            <div class="service-card__price">2.500 ₽</div>
+                        </div>
+                        <div class="service-card__content">
+                            <ul class="service-card__features">
+                                <li>Форма подачи заявок</li>
+                                <li>Система рассмотрения</li>
+                                <li>Управление заявками</li>
+                            </ul>
+                            <a href="https://t.me/unicore_applications_bot" class="service-card__button">Заказать</a>
+                        </div>
+                    </div>
+
+                    <!-- Команда проекта -->
+                    <div class="service-card">
+                        <div class="service-card__header">
+                            <h3>⚡ Модуль "Команда проекта"</h3>
+                            <div class="service-card__price">3.000 ₽</div>
+                        </div>
+                        <div class="service-card__content">
+                            <ul class="service-card__features">
+                                <li>Зависим от "Заявка в персонал"</li>
+                                <li>Управление составом команды</li>
+                                <li>Интеграция с системой заявок</li>
+                            </ul>
+                            <a href="https://t.me/unicore_applications_bot" class="service-card__button">Заказать</a>
+                        </div>
+                    </div>
+
+                    <!-- ЮKassa -->
+                    <div class="service-card">
+                        <div class="service-card__header">
+                            <h3>⚡ Модуль "Пополнение через ЮКасса"</h3>
+                            <div class="service-card__price">2.500 ₽</div>
+                        </div>
+                        <div class="service-card__content">
+                            <ul class="service-card__features">
+                                <li>Автоматическое пополнение</li>
+                                <li>История транзакций</li>
+                                <li>Безопасные платежи</li>
+                            </ul>
+                            <a href="https://t.me/unicore_applications_bot" class="service-card__button">Заказать</a>
+                        </div>
+                    </div>
+
+                    <!-- AAIO -->
+                    <div class="service-card">
+                        <div class="service-card__header">
+                            <h3>⚡ Модуль "Пополнение через AAIO"</h3>
+                            <div class="service-card__price">2.500 ₽</div>
+                        </div>
+                        <div class="service-card__content">
+                            <ul class="service-card__features">
+                                <li>Автоматическое пополнение</li>
+                                <li>Множество способов оплаты</li>
+                                <li>Безопасные транзакции</li>
+                            </ul>
+                            <a href="https://t.me/unicore_applications_bot" class="service-card__button">Заказать</a>
+                        </div>
+                    </div>
+
+                    <!-- Админ права -->
+                    <div class="service-card">
+                        <div class="service-card__header">
+                            <h3>⚡ Модуль "Выдача Админ прав на сервере"</h3>
+                            <div class="service-card__price">4.500 ₽</div>
+                        </div>
+                        <div class="service-card__content">
+                            <ul class="service-card__features">
+                                <li>Автоматическая выдача прав</li>
+                                <li>Управление привилегиями</li>
+                                <li>Интеграция с серверами</li>
+                            </ul>
+                            <a href="https://t.me/unicore_applications_bot" class="service-card__button">Заказать</a>
+                        </div>
+                    </div>
+
+                    <!-- Discord WebHook -->
+                    <div class="service-card">
+                        <div class="service-card__header">
+                            <h3>⚡ Модуль "WebHOOK Discord"</h3>
+                            <div class="service-card__price">1.300 ₽</div>
+                        </div>
+                        <div class="service-card__content">
+                            <ul class="service-card__features">
+                                <li>Зависим от "Заявка в персонал"</li>
+                                <li>Интеграция с Discord</li>
+                                <li>Система оповещений</li>
+                            </ul>
+                            <a href="https://t.me/unicore_applications_bot" class="service-card__button">Заказать</a>
+                        </div>
+                    </div>
+
+                    <!-- API для форума -->
+                    <div class="service-card">
+                        <div class="service-card__header">
+                            <h3>⚡ Модуль "API для форума IPS"</h3>
+                            <div class="service-card__price">2.500 ₽</div>
+                        </div>
+                        <div class="service-card__content">
+                            <ul class="service-card__features">
+                                <li>Интеграция с форумом</li>
+                                <li>API для взаимодействия</li>
+                                <li>Синхронизация данных</li>
+                            </ul>
+                            <a href="https://t.me/unicore_applications_bot" class="service-card__button">Заказать</a>
+                        </div>
+                    </div>
+
+                    <!-- Форум -->
+                    <div class="service-card">
+                        <div class="service-card__header">
+                            <h3>⚡ Модуль "Форум"</h3>
+                            <div class="service-card__price">10.000 ₽</div>
+                        </div>
+                        <div class="service-card__content">
+                            <ul class="service-card__features">
+                                <li>Полноценный форум</li>
+                                <li>Интеграция с системой</li>
+                                <li>Управление разделами</li>
+                            </ul>
+                            <a href="https://t.me/unicore_applications_bot" class="service-card__button">Заказать</a>
+                        </div>
+                    </div>
+
+                    <!-- Я застрял -->
+                    <div class="service-card">
+                        <div class="service-card__header">
+                            <h3>⚡ Модуль "Я застрял"</h3>
+                            <div class="service-card__price">4.000 ₽</div>
+                        </div>
+                        <div class="service-card__content">
+                            <ul class="service-card__features">
+                                <li>Помощь игрокам</li>
+                                <li>Автоматическая система</li>
+                                <li>Интеграция с серверами</li>
+                            </ul>
+                            <a href="https://t.me/unicore_applications_bot" class="service-card__button">Заказать</a>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <h2 class="section-title">Стоимость услуг</h2>
-            <h3>Основные услуги по UnicoreCMS</h3>
-            
-            <div class="pricing__list">
-                <div class="pricing__item">
-                    <span class="pricing__item-name">⚡ Установка UnicoreCMS</span>
-                    <span class="pricing__item-price">3.500 ₽</span>
-                </div>
-                <div class="pricing__item">
-                    <span class="pricing__item-name">⚡ Модуль "Заявка в персонал"</span>
-                    <span class="pricing__item-price">2.500 ₽</span>
-                </div>
-                <div class="pricing__item">
-                    <span class="pricing__item-name">⚡ Модуль "Команда проекта"(Зависим от "Заявка в персонал")</span>
-                    <span class="pricing__item-price">3.000 ₽</span>
-                </div>
-                <div class="pricing__item">
-                    <span class="pricing__item-name">⚡ Модуль "Пополнение через ЮКасса"</span>
-                    <span class="pricing__item-price">2.500 ₽</span>
-                </div>
-                <div class="pricing__item">
-                    <span class="pricing__item-name">⚡ Модуль "Пополнение через AAIO"</span>
-                    <span class="pricing__item-price">2.500 ₽</span>
-                </div>
-                <div class="pricing__item">
-                    <span class="pricing__item-name">⚡ Модуль "Выдача Админ прав на сервере"</span>
-                    <span class="pricing__item-price">4.500 ₽</span>
-                </div>
-                <div class="pricing__item">
-                    <span class="pricing__item-name">⚡ Модуль "WebHOOK Discord"(Зависим от "Заявка в персонал")</span>
-                    <span class="pricing__item-price">1.300 ₽</span>
-                </div>
-                <div class="pricing__item">
-                    <span class="pricing__item-name">⚡ Модуль "API для форума IPS"</span>
-                    <span class="pricing__item-price">2.500 ₽</span>
-                </div>
-                <div class="pricing__item">
-                    <span class="pricing__item-name">⚡ Модуль "Форум"</span>
-                    <span class="pricing__item-price">10.000 ₽</span>
-                </div>
-                <div class="pricing__item">
-                    <span class="pricing__item-name">⚡ Модуль "Я застрял"</span>
-                    <span class="pricing__item-price">4.000 ₽</span>
+        <!-- Дополнительные услуги -->
+        <section id="modules" class="modules">
+            <div class="modules__container">
+                <h2 class="section-title">Дополнительные услуги</h2>
+                <div class="modules__grid">
+                    <!-- WorldRender -->
+                    <div class="module-card">
+                        <div class="module-card__header">
+                            <h3>⚡ Мод-Плагин: "WorldRender" - 1.7.10</h3>
+                            <div class="module-card__price">2.000 ₽</div>
+                        </div>
+                        <div class="module-card__content">
+                            <ul class="module-card__features">
+                                <li>Рендер мира</li>
+                                <li>Версия 1.7.10</li>
+                                <li>Интеграция с картой</li>
+                            </ul>
+                            <a href="https://t.me/unicore_applications_bot" class="module-card__button">Заказать</a>
+                        </div>
+                    </div>
+
+                    <!-- CustomTabList -->
+                    <div class="module-card">
+                        <div class="module-card__header">
+                            <h3>⚡ Мод: "CustomTabList - 1.7.10"</h3>
+                            <div class="module-card__price">2.000 ₽</div>
+                        </div>
+                        <div class="module-card__content">
+                            <ul class="module-card__features">
+                                <li>Кастомный TabList</li>
+                                <li>Версия 1.7.10</li>
+                                <li>Настройка отображения</li>
+                            </ul>
+                            <a href="https://t.me/unicore_applications_bot" class="module-card__button">Заказать</a>
+                        </div>
+                    </div>
+
+                    <!-- AdvancedChat -->
+                    <div class="module-card">
+                        <div class="module-card__header">
+                            <h3>⚡ Мод: "AdvancedChat - 1.7.10"</h3>
+                            <div class="module-card__price">4.000 ₽</div>
+                        </div>
+                        <div class="module-card__content">
+                            <ul class="module-card__features">
+                                <li>Продвинутый чат</li>
+                                <li>Версия 1.7.10</li>
+                                <li>Дополнительные функции</li>
+                            </ul>
+                            <a href="https://t.me/unicore_applications_bot" class="module-card__button">Заказать</a>
+                        </div>
+                    </div>
+
+                    <!-- Персонализация -->
+                    <div class="module-card">
+                        <div class="module-card__header">
+                            <h3>⚡ Мод: "Персонализация - 1.7.10"</h3>
+                            <div class="module-card__price">7.000 ₽</div>
+                        </div>
+                        <div class="module-card__content">
+                            <ul class="module-card__features">
+                                <li>Персонализация игры</li>
+                                <li>Версия 1.7.10</li>
+                                <li>Расширенные настройки</li>
+                            </ul>
+                            <a href="https://t.me/unicore_applications_bot" class="module-card__button">Заказать</a>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <h3>Дополнительные услуги</h3>
-            <div class="pricing__list">
-                <div class="pricing__item">
-                    <span class="pricing__item-name">⚡ Мод-Плагин: "WorldRender" - 1.7.10</span>
-                    <span class="pricing__item-price">2.000 ₽</span>
-                </div>
-                <div class="pricing__item">
-                    <span class="pricing__item-name">⚡ Мод: "CustomTabList - 1.7.10"</span>
-                    <span class="pricing__item-price">2.000 ₽</span>
-                </div>
-                <div class="pricing__item">
-                    <span class="pricing__item-name">⚡ Мод: "AdvancedChat - 1.7.10"</span>
-                    <span class="pricing__item-price">4.000 ₽</span>
-                </div>
-                <div class="pricing__item">
-                    <span class="pricing__item-name">⚡ Мод: "Персонализация - 1.7.10"</span>
-                    <span class="pricing__item-price">7.000 ₽</span>
+        <!-- Возможности -->
+        <section id="features" class="features">
+            <div class="features__container">
+                <h2 class="section-title">Возможности системы</h2>
+                <div class="features__content">
+                    <div class="features__group features__group--main">
+                        <h3>Интегрированные компоненты</h3>
+                        <div class="features__list">
+                            <div class="features__item">
+                                <div class="features__item-header">
+                                    <span class="features__item-icon">⚡</span>
+                                    <h4>Система пользователей</h4>
+                                </div>
+                                <ul>
+                                    <li>Учётные записи пользователей</li>
+                                    <li>Публичные профили</li>
+                                    <li>Загрузка/Удаление скинов/плащей</li>
+                                    <li>Система ролей и прав (как PEX/LuckPerms)</li>
+                                </ul>
+                            </div>
+                            <div class="features__item">
+                                <div class="features__item-header">
+                                    <span class="features__item-icon">⚡</span>
+                                    <h4>Безопасность</h4>
+                                </div>
+                                <ul>
+                                    <li>JWT-авторизация (Access/Refresh)</li>
+                                    <li>Система сеансов и история</li>
+                                    <li>Двухфакторная авторизация</li>
+                                    <li>Смена/Восстановление пароля</li>
+                                </ul>
+                            </div>
+                            <div class="features__item">
+                                <div class="features__item-header">
+                                    <span class="features__item-icon">⚡</span>
+                                    <h4>Управление и мониторинг</h4>
+                                </div>
+                                <ul>
+                                    <li>Админ-Панель для всего функционала</li>
+                                    <li>Статические страницы серверов</li>
+                                    <li>Логирование действий</li>
+                                    <li>Real-Time мониторинг (веб-сокеты)</li>
+                                    <li>Сбор статистики PlayTime</li>
+                                    <li>Новости с VK и Discord</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="features__group features__group--commerce">
+                        <h3>E-Commerce система</h3>
+                        <div class="features__list">
+                            <div class="features__item">
+                                <div class="features__item-header">
+                                    <span class="features__item-icon">⚡</span>
+                                    <h4>Платежи и товары</h4>
+                                </div>
+                                <ul>
+                                    <li>6 платёжных систем</li>
+                                    <li>Мультисерверность всех компонентов</li>
+                                    <li>Продажа внутриигровых товаров и китов</li>
+                                    <li>Продажа прав и групп</li>
+                                </ul>
+                            </div>
+                            <div class="features__item">
+                                <div class="features__item-header">
+                                    <span class="features__item-icon">⚡</span>
+                                    <h4>Дополнительные функции</h4>
+                                </div>
+                                <ul>
+                                    <li>Продажа веб-прав (HD-скины)</li>
+                                    <li>Вознаграждения за голосование</li>
+                                    <li>Ежемесячные подарки топ-голосующим</li>
+                                    <li>Внутриигровая экономика</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="features__group features__group--external">
+                        <h3>Внешние компоненты</h3>
+                        <div class="features__list">
+                            <div class="features__item">
+                                <div class="features__item-header">
+                                    <span class="features__item-icon">⚡</span>
+                                    <h4>UnicoreConnect</h4>
+                                </div>
+                                <ul>
+                                    <li>Sponge/Spigot-плагин</li>
+                                    <li>Двухнаправленная интеграция</li>
+                                    <li>Экономика, права, группы</li>
+                                    <li>Склад покупок и баны</li>
+                                    <li>Сбор статистики</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="features-list">
-        <div class="container">
-            <h2 class="section-title">Покупая CMS вы получаете</h2>
-            <h3>Интегрированные компоненты</h3>
-            <ul>
-                <li data-emoji="👥">
-                    <span>Система учётных записей пользователей.</span>
-                </li>
-                <li data-emoji="👀">
-                    <span>Публичные профили пользователей.</span>
-                </li>
-                <li data-emoji="💼">
-                    <span>Загрузка/Удаление скинов/плащей.</span>
-                </li>
-                <li data-emoji="👑">
-                    <span>Система ролей и прав пользователей, принцип работы схож с PEX/LuckPerms. Встроенные группы для default и banned (например можно запретить перевод денег заблокированным на серверах пользователям)</span>
-                </li>
-                <li data-emoji="🔑">
-                    <span>Авторизация на основе JWT-токенов (Access/Refresh).</span>
-                </li>
-                <li data-emoji="📜">
-                    <span>Система сеансов, история авторизаций.</span>
-                </li>
-                <li data-emoji="📱">
-                    <span>Двухфакторная авторизация.</span>
-                </li>
-                <li data-emoji="🔒">
-                    <span>Смена/Восстановление пароля подтверждение Email.</span>
-                </li>
-                <li data-emoji="💪">
-                    <span>Админ-Панель, охватывающая весь функционал системы (далее ПУ)</span>
-                </li>
-                <li data-emoji="📚">
-                    <span>Статические страницы, автоматически генерируемые статические страницы для описания серверов и донат-групп.</span>
-                </li>
-                <li data-emoji="🛡">
-                    <span>Логирование действий в ЛК и магазине.</span>
-                </li>
-                <li data-emoji="⚔️">
-                    <span>Сбор внутриигровой статистики PlayTime (мультисерверно).</span>
-                </li>
-                <li data-emoji="📊">
-                    <span>Real-Time мониторинг на веб-сокетах.</span>
-                </li>
-                <li data-emoji="💡">
-                    <span>Новости. Парсинг новостей с помощью VK Longpoll, копирование в Discord-канал за счёт Вебхуков.</span>
-                </li>
-            </ul>
+        <!-- Подвал -->
+        <footer class="footer">
+            <div class="footer__container">
+                <div class="footer__grid">
+                    <div class="footer__info">
+                        <img src="img/logo.png" alt="UnicoreCMS 2.0" class="footer__logo">
+                        <p>Профессиональная CMS для модовых проектов Minecraft</p>
+                        <div class="footer__social">
+                            <a href="https://github.com/Nik497926" class="footer__social-link">
+                                <img src="img/github.svg" alt="GitHub">
+                            </a>
+                            <a href="https://t.me/nikita497926" class="footer__social-link">
+                                <img src="img/telegram-logo.svg" alt="Telegram">
+                            </a>
+                        </div>
+                    </div>
 
-            <h3>E-Commerce система</h3>
-            <ul>
-                <li data-emoji="💳">
-                    <span>Поддержка 6 платёжных систем.</span>
-                </li>
-                <li data-emoji="🌐">
-                    <span>Полная мультисерверность всех компонентов, пересечения между серверами.</span>
-                </li>
-                <li data-emoji="🎁">
-                    <span>Продажа внутриигровых товаров и китов, группирование по категориям.</span>
-                </li>
-                <li data-emoji="⭐">
-                    <span>Продажа внутриигровых прав/групп</span>
-                </li>
-                <li data-emoji="💎">
-                    <span>Продажа веб-прав (Например возможность загрузки HD-скина и т. д.)</span>
-                </li>
-                <li data-emoji="🏆">
-                    <span>Вознаграждения при голосовании в мониторингах (TopCraft, MCTop, Minecraft-Raiting).</span>
-                </li>
-                <li data-emoji="🎉">
-                    <span>Ежемесячные подарки для топ-голосующих.</span>
-                </li>
-                <li data-emoji="💰">
-                    <span>Внутриигровая экономика (мультисерверно). Перевод валюты между серверами, игроками, обмен валюты.</span>
-                </li>
-            </ul>
+                    <div class="footer__links">
+                        <div class="footer__group">
+                            <h3>Документация</h3>
+                            <ul>
+                                <li><a href="agreement.pdf">Пользовательское соглашение</a></li>
+                                <li><a href="oferta.pdf">Договор оферты</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer__group">
+                            <h3>Поддержка</h3>
+                            <ul>
+                                <li><a href="https://t.me/nikita497926">Техническая поддержка</a></li>
+                                <li><a href="https://t.me/nikita497926">Сообщить об ошибке</a></li>
+                            </ul>
+                        </div>
+                    </div>
 
-            <h3>Внешние компоненты</h3>
-            <ul>
-                <li data-emoji="🔌">
-                    <span>UnicoreConnect - Sponge/Spigot-плагин для двухнаправленной интеграции экономики, прав, групп, склада-покупок, банов и сбора статистики между сайтом и серверами.</span>
-                </li>
-            </ul>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer__content">
-                <div class="footer__section">
-                    <h3 class="footer__title">Документация</h3>
-                    <ul class="footer__links">
-                        <li><a href="agreement.pdf" class="footer__link">📚 Пользовательское соглашение</a></li>
-                        <li><a href="oferta.pdf" class="footer__link">📖 Договор оферты</a></li>
-                    </ul>
+                    <div class="footer__contact">
+                        <h3>Контакты</h3>
+                        <p>ИП Кулешов Н.С.</p>
+                        <p>ИНН: 505203903593</p>
+                        <p>Email: no-reply@unicorecms2.ru</p>
+                    </div>
                 </div>
 
-				<div class="footer__section">
-                    <h3 class="footer__title">Сообщество</h3>
-                    <ul class="footer__links">
-                        <li><a href="https://github.com/Nik497926" class="footer__link">🌟 GitHub</a></li>
-						<li><a href="https://github.com/GML-Launcher" class="footer__link">🌟 GitHub GML-Launcher</a></li>
-                        <li><a href="https://t.me/nikita497926" class="footer__link">🐦 Telegram</a></li>
-                        <li><a href="https://t.me/unicore_applications_bot" class="footer__link">� Заявка на покупку</a></li>
-                    </ul>
+                <div class="footer__bottom">
+                    <p>© 2025 UnicoreCMS 2.0. Все права защищены.</p>
                 </div>
-                
-                <div class="footer__section">
-                    <h3 class="footer__title">Поддержка</h3>
-                    <ul class="footer__links">
-                        <li><a href="https://t.me/nikita497926" class="footer__link">💬 Чат поддержки</a></li>
-                        <li><a href="https://t.me/nikita497926" class="footer__link">�� Сообщить об ошибке</a></li>
-                        <li><a href="https://t.me/nikita497926" class="footer__link">💡 Предложить идею</a></li>
-                    </ul>
-                </div>
-                
-                
             </div>
-            
-            <div class="footer__bottom">
-		<p>Unicore 2.0.</p>
-                <p>© 2025 Все права защищены</p>
-                <p>Создано с ❤️ для разработчиков</p>
-                <p>ИП Кулешов Н.С.</p>
-                <p>ИНН - 505203903593</p>
-                <p>EMail - no-reply@unicorecms2.ru</p>
-            </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 
-    <!-- Yandex.Metrika counter -->
+    <script>
+        // Мобильное меню
+        document.querySelector('.header__toggle').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.querySelector('.header__nav').classList.toggle('active');
+        });
+    </script>
+
+    <!-- Метрики -->
     <script type="text/javascript">
         (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
         m[i].l=1*new Date();
@@ -331,7 +514,6 @@
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/99129618" style="position:absolute; left:-9999px;" alt=""></div></noscript>
 
-    <!-- Top.Mail.Ru counter -->
     <script type="text/javascript">
         var _tmr = window._tmr || (window._tmr = []);
         _tmr.push({id: "3610360", type: "pageView", start: (new Date()).getTime()});
@@ -344,28 +526,6 @@
         })(document, window, "tmr-code");
     </script>
     <noscript><div><img src="https://top-fwz1.mail.ru/counter?id=3610360;js=na" style="position:absolute;left:-9999px;" alt="Top.Mail.Ru"></div></noscript>
-
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const mobileToggle = document.querySelector('.navbar__mobile-toggle');
-        const navItems = document.querySelector('.navbar__items');
-        
-        mobileToggle.addEventListener('click', function() {
-            mobileToggle.classList.toggle('active');
-            navItems.classList.toggle('active');
-            document.body.classList.toggle('menu-open');
-        });
-
-        // Закрываем меню при клике на ссылку
-        const navLinks = document.querySelectorAll('.navbar__items a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileToggle.classList.remove('active');
-                navItems.classList.remove('active');
-                document.body.classList.remove('menu-open');
-            });
-        });
-    });
-    </script>
 </body>
 </html>
+
