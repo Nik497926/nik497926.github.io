@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.One - Музыка</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="music-container">
+        <!-- Анимированный фон -->
+        <div class="background-animation">
+            <div class="wave wave-1"></div>
+            <div class="wave wave-2"></div>
+            <div class="wave wave-3"></div>
+            <div class="particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
+            <!-- Летающие музыкальные ноты -->
+            <div class="music-notes">
+                <div class="note note-1">♪</div>
+                <div class="note note-2">♫</div>
+                <div class="note note-3">♬</div>
+                <div class="note note-4">♪</div>
+                <div class="note note-5">♫</div>
+                <div class="note note-6">♬</div>
+            </div>
+            <!-- Визуализация звука -->
+            <div class="sound-waves">
+                <div class="sound-wave wave-1"></div>
+                <div class="sound-wave wave-2"></div>
+                <div class="sound-wave wave-3"></div>
+            </div>
+        </div>
+
+        <!-- Кнопка "Вернуться назад" -->
+        <a href="/" class="back-button">
+            <svg class="back-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            <span>Вернуться назад</span>
+        </a>
+
+        <!-- Основной контент -->
+        <div class="content-wrapper">
+            <!-- Карточка артиста -->
+            <div class="artist-section">
+                <div class="artist-card">
+                    <div class="card-glow"></div>
+                    
+                    <!-- Аватар артиста -->
+                    <div class="artist-avatar">
+                        <div class="avatar-ring"></div>
+                        <div class="avatar-ring ring-2"></div>
+                        <!-- Визуализация звука вокруг аватара -->
+                        <div class="audio-visualizer">
+                            <div class="audio-bar bar-1"></div>
+                            <div class="audio-bar bar-2"></div>
+                            <div class="audio-bar bar-3"></div>
+                            <div class="audio-bar bar-4"></div>
+                            <div class="audio-bar bar-5"></div>
+                            <div class="audio-bar bar-6"></div>
+                            <div class="audio-bar bar-7"></div>
+                            <div class="audio-bar bar-8"></div>
+                        </div>
+                        <div class="avatar-image">
+                            <img src="https://avatars.yandex.net/get-music-content/13043189/33f8ba0d.p.24648325/m1000x1000" alt="S.One" loading="lazy">
+                        </div>
+                        <div class="avatar-pulse"></div>
+                    </div>
+
+                    <!-- Информация об артисте -->
+                    <div class="artist-info">
+                        <div class="artist-badge">Артист</div>
+                        <h1 class="artist-name">S.One</h1>
+                        <p class="artist-subtitle">Никита</p>
+                        
+                        <!-- Описание -->
+                        <div class="artist-description">
+                            <p>Айтишник по образованию, музыкант по призванию. Создаю музыку, когда приходит вдохновение — каждая композиция рождается из эмоций и переживаний. Поп-музыка с русской душой.</p>
+                        </div>
+
+                        <!-- Теги жанров -->
+                        <div class="artist-tags">
+                            <span class="tag">Pop Russia</span>
+                            <span class="tag">Русский поп</span>
+                            <span class="tag">Вдохновение</span>
+                        </div>
+
+                        <!-- Дополнительная информация -->
+                        <div class="artist-meta">
+                            <div class="meta-item">
+                                <div class="meta-icon">💻</div>
+                                <div class="meta-text">
+                                    <span class="meta-label">Профессия</span>
+                                    <span class="meta-value">Айтишник</span>
+                                </div>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-icon">🎵</div>
+                                <div class="meta-text">
+                                    <span class="meta-label">Жанр</span>
+                                    <span class="meta-value">Pop Russia</span>
+                                </div>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-icon">✨</div>
+                                <div class="meta-text">
+                                    <span class="meta-label">Творчество</span>
+                                    <span class="meta-value">По вдохновению</span>
+                                </div>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-icon">📍</div>
+                                <div class="meta-text">
+                                    <span class="meta-label">Платформа</span>
+                                    <span class="meta-value">Яндекс.Музыка</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Кнопка перехода -->
+                        <a href="https://music.yandex.ru/artist/24648325" target="_blank" rel="noopener noreferrer" class="yandex-music-btn">
+                            <div class="btn-content">
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
+                                </svg>
+                                <span>Слушать на Яндекс.Музыке</span>
+                            </div>
+                            <div class="btn-ripple"></div>
+                            <div class="btn-sparkles">
+                                <span class="sparkle"></span>
+                                <span class="sparkle"></span>
+                                <span class="sparkle"></span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Декоративные элементы -->
+                    <div class="card-decoration">
+                        <div class="decoration-circle circle-1"></div>
+                        <div class="decoration-circle circle-2"></div>
+                        <div class="decoration-circle circle-3"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Секция с треками -->
+            <div class="tracks-section">
+                <div class="section-divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-icon">🎼</div>
+                    <div class="divider-line"></div>
+                </div>
+                <h2 class="tracks-title">
+                    <span class="title-icon">🎵</span>
+                    <span>Мои треки</span>
+                </h2>
+                
+                <div class="tracks-grid">
+                    <!-- Трек 1 -->
+                    <div class="track-card">
+                        <div class="track-glow"></div>
+                        <div class="track-header">
+                            <div class="track-number">01</div>
+                            <h3 class="track-name">С Книгой</h3>
+                        </div>
+                        <div class="track-player">
+                            <iframe 
+                                frameborder="0" 
+                                allow="clipboard-write" 
+                                style="border:none;width:100%;height:244px;" 
+                                width="100%" 
+                                height="244" 
+                                src="https://music.yandex.ru/iframe/album/37906321/track/142145403"
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                        <div class="track-footer">
+                            <a href="https://music.yandex.ru/track/142145403" target="_blank" rel="noopener noreferrer" class="track-link">
+                                Открыть в Яндекс.Музыке
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Трек 2 -->
+                    <div class="track-card">
+                        <div class="track-glow"></div>
+                        <div class="track-header">
+                            <div class="track-number">02</div>
+                            <h3 class="track-name">Мне тяжело сказать "Люблю"</h3>
+                        </div>
+                        <div class="track-player">
+                            <iframe 
+                                frameborder="0" 
+                                allow="clipboard-write" 
+                                style="border:none;width:100%;height:244px;" 
+                                width="100%" 
+                                height="244" 
+                                src="https://music.yandex.ru/iframe/album/37883236/track/142086570"
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                        <div class="track-footer">
+                            <a href="https://music.yandex.ru/track/142086570" target="_blank" rel="noopener noreferrer" class="track-link">
+                                Открыть в Яндекс.Музыке
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Секция "О творчестве" -->
+            <div class="about-section">
+                <div class="section-divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-icon">🎹</div>
+                    <div class="divider-line"></div>
+                </div>
+                <h2 class="section-title">
+                    <span class="title-icon">✨</span>
+                    <span>О творчестве</span>
+                </h2>
+                <div class="about-content">
+                    <div class="about-card">
+                        <div class="about-icon">💡</div>
+                        <h3>Вдохновение</h3>
+                        <p>Музыка рождается спонтанно, когда приходит момент. Это не работа по расписанию, а творческий порыв души.</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="about-icon">🎯</div>
+                        <h3>Философия</h3>
+                        <p>Каждая композиция — это история, эмоция, переживание. Музыка как способ выразить то, что сложно сказать словами.</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="about-icon">🚀</div>
+                        <h3>Развитие</h3>
+                        <p>Постоянно экспериментирую со звуком, ищу новые формы выражения и совершенствую своё мастерство.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Секция с фактами -->
+            <div class="facts-section">
+                <div class="section-divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-icon">⭐</div>
+                    <div class="divider-line"></div>
+                </div>
+                <h2 class="section-title">
+                    <span class="title-icon">📊</span>
+                    <span>Интересные факты</span>
+                </h2>
+                <div class="facts-grid">
+                    <div class="fact-card">
+                        <div class="fact-number">01</div>
+                        <div class="fact-content">
+                            <h3>Двойная жизнь</h3>
+                            <p>Днём — айтишник, ночью — музыкант. Две страсти, которые дополняют друг друга.</p>
+                        </div>
+                    </div>
+                    <div class="fact-card">
+                        <div class="fact-number">02</div>
+                        <div class="fact-content">
+                            <h3>Русская душа</h3>
+                            <p>Создаю музыку в жанре Pop Russia, вкладывая в каждую композицию частичку русской культуры.</p>
+                        </div>
+                    </div>
+                    <div class="fact-card">
+                        <div class="fact-number">03</div>
+                        <div class="fact-content">
+                            <h3>Эмоциональность</h3>
+                            <p>Каждая песня — это отражение внутреннего мира, переживаний и чувств в определённый момент жизни.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Секция с цитатой -->
+            <div class="quote-section">
+                <div class="quote-card">
+                    <div class="quote-icon">"</div>
+                    <blockquote class="quote-text">
+                        Музыка — это язык души. Когда слова бессильны, звуки говорят за нас.
+                    </blockquote>
+                    <div class="quote-author">— S.One</div>
+                </div>
+            </div>
+
+            <!-- Футер -->
+            <footer class="music-footer">
+                <div class="footer-content">
+                    <div class="footer-text">
+                        <p>© 2025 S.One. Все права защищены.</p>
+                        <p class="footer-subtitle">Музыка создаётся с любовью и вдохновением</p>
+                    </div>
+                    <div class="footer-links">
+                        <a href="https://music.yandex.ru/artist/24648325" target="_blank" rel="noopener noreferrer" class="footer-link">
+                            <span>Яндекс.Музыка</span>
+                        </a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
