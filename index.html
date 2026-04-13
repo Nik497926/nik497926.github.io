@@ -10,6 +10,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Make lucide icons scale like emoji font-size */
+        svg.lucide {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.125em;
+        }
+    </style>
 </head>
 <body>
     <!-- Навигация -->
@@ -20,17 +28,18 @@
             </a>
             <div class="nav__menu">
                 <a href="#services" class="nav__link">Услуги</a>
+                <a href="#templates" class="nav__link">Шаблоны</a>
                 <a href="#addons" class="nav__link">Дополнительно</a>
                 <a href="#partners" class="nav__link">Партнеры</a>
                 <a href="/music" class="nav__link">Музыка</a>
             </div>
             <div class="nav__actions">
                 <a href="https://demo.unicorecms2.ru" class="button button--outline">
-                    <span class="button__icon">🔍</span>
+                    <span class="button__icon"><i data-lucide="search"></i></span>
                     <span>Демо</span>
                 </a>
                 <a href="https://t.me/nikita497926" class="button button--primary">
-                    <span class="button__icon">🚀</span>
+                    <span class="button__icon"><i data-lucide="rocket"></i></span>
                     <span>Заказать</span>
                 </a>
             </div>
@@ -55,28 +64,28 @@
                 <p class="hero__subtitle">Профессиональная CMS для модовых проектов Minecraft</p>
                 <div class="hero__features">
                     <div class="hero__feature">
-                        <div class="hero__feature-icon">⚡</div>
+                        <div class="hero__feature-icon"><i data-lucide="zap"></i></div>
                         <h3>Высокая производительность</h3>
                         <p>Оптимизированный код и быстрая работа</p>
                     </div>
                     <div class="hero__feature">
-                        <div class="hero__feature-icon">🛡️</div>
+                        <div class="hero__feature-icon"><i data-lucide="shield"></i></div>
                         <h3>Безопасность данных</h3>
                         <p>Защита от взлома и утечек</p>
                     </div>
                     <div class="hero__feature">
-                        <div class="hero__feature-icon">🔄</div>
+                        <div class="hero__feature-icon"><i data-lucide="refresh-cw"></i></div>
                         <h3>Автоматизация</h3>
                         <p>Все процессы работают автоматически</p>
                     </div>
                 </div>
                 <div class="hero__actions">
                     <a href="#services" class="button button--primary button--lg">
-                        <span class="button__icon">🎮</span>
+                        <span class="button__icon"><i data-lucide="gamepad-2"></i></span>
                         <span>Начать использовать</span>
                     </a>
                     <a href="https://demo.unicorecms2.ru" class="button button--outline button--lg">
-                        <span class="button__icon">🔍</span>
+                        <span class="button__icon"><i data-lucide="search"></i></span>
                         <span>Попробовать демо</span>
                     </a>
                 </div>
@@ -148,7 +157,7 @@
                 <div class="service-card">
                     <div class="service-card__shine"></div>
                     <div class="service-card__header">
-                        <div class="service-card__icon">🚀</div>
+                        <div class="service-card__icon"><i data-lucide="rocket"></i></div>
                         <h3>Установка UnicoreCMS</h3>
                         <span class="service-card__price">3.500 ₽</span>
                     </div>
@@ -159,7 +168,7 @@
                             <li>Интеграция с GML-Launcher</li>
                         </ul>
                         <a href="https://t.me/nikita497926" class="button button--primary button--full">
-                            <span class="button__icon">💳</span>
+                            <span class="button__icon"><i data-lucide="credit-card"></i></span>
                             <span>Заказать</span>
                         </a>
                     </div>
@@ -169,7 +178,7 @@
                 <div class="service-card">
                     <div class="service-card__shine"></div>
                     <div class="service-card__header">
-                        <div class="service-card__icon">👥</div>
+                        <div class="service-card__icon"><i data-lucide="users"></i></div>
                         <h3>Модуль "Заявка в персонал"</h3>
                         <span class="service-card__price">2.500 ₽</span>
                     </div>
@@ -180,7 +189,7 @@
                             <li>Управление заявками</li>
                         </ul>
                         <a href="https://t.me/nikita497926" class="button button--primary button--full">
-                            <span class="button__icon">💳</span>
+                            <span class="button__icon"><i data-lucide="credit-card"></i></span>
                             <span>Заказать</span>
                         </a>
                     </div>
@@ -190,7 +199,7 @@
                 <div class="service-card">
                     <div class="service-card__shine"></div>
                     <div class="service-card__header">
-                        <div class="service-card__icon">👥</div>
+                        <div class="service-card__icon"><i data-lucide="users"></i></div>
                         <h3>Модуль "Команда проекта"</h3>
                         <span class="service-card__price">3.000 ₽</span>
                     </div>
@@ -201,7 +210,7 @@
                             <li>Автоматизация процессов</li>
                         </ul>
                         <a href="https://t.me/nikita497926" class="button button--primary button--full">
-                            <span class="button__icon">💳</span>
+                            <span class="button__icon"><i data-lucide="credit-card"></i></span>
                             <span>Заказать</span>
                         </a>
                     </div>
@@ -211,7 +220,7 @@
                 <div class="service-card">
                     <div class="service-card__shine"></div>
                     <div class="service-card__header">
-                        <div class="service-card__icon">🛡️</div>
+                        <div class="service-card__icon"><i data-lucide="shield"></i></div>
                         <h3>Модуль "Админ права"</h3>
                         <span class="service-card__price">4.500 ₽</span>
                     </div>
@@ -222,7 +231,7 @@
                             <li>Интеграция с серверами</li>
                         </ul>
                         <a href="https://t.me/nikita497926" class="button button--primary button--full">
-                            <span class="button__icon">💳</span>
+                            <span class="button__icon"><i data-lucide="credit-card"></i></span>
                             <span>Заказать</span>
                         </a>
                     </div>
@@ -232,7 +241,7 @@
                 <div class="service-card">
                     <div class="service-card__shine"></div>
                     <div class="service-card__header">
-                        <div class="service-card__icon">🔄</div>
+                        <div class="service-card__icon"><i data-lucide="refresh-cw"></i></div>
                         <h3>Модуль "WebHOOK Discord"</h3>
                         <span class="service-card__price">1.300 ₽</span>
                     </div>
@@ -243,7 +252,7 @@
                             <li>Автоматизация уведомлений</li>
                         </ul>
                         <a href="https://t.me/nikita497926" class="button button--primary button--full">
-                            <span class="button__icon">💳</span>
+                            <span class="button__icon"><i data-lucide="credit-card"></i></span>
                             <span>Заказать</span>
                         </a>
                     </div>
@@ -253,7 +262,7 @@
                 <div class="service-card">
                     <div class="service-card__shine"></div>
                     <div class="service-card__header">
-                        <div class="service-card__icon">🔄</div>
+                        <div class="service-card__icon"><i data-lucide="refresh-cw"></i></div>
                         <h3>Модуль "API для форума IPS"</h3>
                         <span class="service-card__price">2.500 ₽</span>
                     </div>
@@ -264,7 +273,7 @@
                             <li>Синхронизация данных</li>
                         </ul>
                         <a href="https://t.me/nikita497926" class="button button--primary button--full">
-                            <span class="button__icon">💳</span>
+                            <span class="button__icon"><i data-lucide="credit-card"></i></span>
                             <span>Заказать</span>
                         </a>
                     </div>
@@ -274,7 +283,7 @@
                 <div class="service-card">
                     <div class="service-card__shine"></div>
                     <div class="service-card__header">
-                        <div class="service-card__icon">👥</div>
+                        <div class="service-card__icon"><i data-lucide="users"></i></div>
                         <h3>Модуль "Форум"</h3>
                         <span class="service-card__price">10.000 ₽</span>
                     </div>
@@ -285,7 +294,7 @@
                             <li>Управление разделами</li>
                         </ul>
                         <a href="https://t.me/nikita497926" class="button button--primary button--full">
-                            <span class="button__icon">💳</span>
+                            <span class="button__icon"><i data-lucide="credit-card"></i></span>
                             <span>Заказать</span>
                         </a>
                     </div>
@@ -295,7 +304,7 @@
                 <div class="service-card">
                     <div class="service-card__shine"></div>
                     <div class="service-card__header">
-                        <div class="service-card__icon">🖼️</div>
+                        <div class="service-card__icon"><i data-lucide="image"></i></div>
                         <h3>Модуль "Скрины с сервера"</h3>
                         <span class="service-card__price">3.000 ₽</span>
                     </div>
@@ -306,7 +315,7 @@
                             <li>Галерея сервера</li>
                         </ul>
                         <a href="https://t.me/nikita497926" class="button button--primary button--full">
-                            <span class="button__icon">💳</span>
+                            <span class="button__icon"><i data-lucide="credit-card"></i></span>
                             <span>Заказать</span>
                         </a>
                     </div>
@@ -316,7 +325,7 @@
                 <div class="service-card">
                     <div class="service-card__shine"></div>
                     <div class="service-card__header">
-                        <div class="service-card__icon">🤔</div>
+                        <div class="service-card__icon"><i data-lucide="circle-help"></i></div>
                         <h3>Модуль "Я застрял"</h3>
                         <span class="service-card__price">4.000 ₽</span>
                     </div>
@@ -327,9 +336,74 @@
                             <li>Интеграция с серверами</li>
                         </ul>
                         <a href="https://t.me/nikita497926" class="button button--primary button--full">
-                            <span class="button__icon">💳</span>
+                            <span class="button__icon"><i data-lucide="credit-card"></i></span>
                             <span>Заказать</span>
                         </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Шаблоны -->
+    <section id="templates" class="addons">
+        <div class="addons__bg">
+            <div class="addons__bg-gradient"></div>
+            <div class="addons__bg-grid"></div>
+        </div>
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Шаблоны</h2>
+                <p class="section__subtitle">Готовые варианты дизайна для быстрого старта</p>
+            </div>
+            <div class="addons__grid">
+                <!-- Тестовая карточка -->
+                <div class="addon-card template-card">
+                    <div class="addon-card__shine"></div>
+                    <div class="template-card__top">
+                        <div class="template-card__title">
+                            <span class="template-card__title-icon"><i data-lucide="layout-template"></i></span>
+                            <div class="template-card__title-text">
+                                <div class="template-card__headline">
+                                    <h3>Dragon</h3>
+                                    <span class="addon-card__price">15.000 ₽</span>
+                                </div>
+                                <p>Лендинг / Веб-сайт</p>
+                            </div>
+                        </div>
+                        <div class="template-card__badges">
+                            <span class="template-badge template-badge--new"><i data-lucide="sparkles"></i> Хит</span>
+                        </div>
+                    </div>
+
+                    <a href="http://clients.unicorecms2.ru" target="_blank" rel="noopener noreferrer" class="template-card__mock" aria-label="Открыть просмотр шаблона Modern">
+                        <div class="template-card__mock-bar">
+                            <span class="template-dot template-dot--red"></span>
+                            <span class="template-dot template-dot--yellow"></span>
+                            <span class="template-dot template-dot--green"></span>
+                            <span class="template-card__mock-url">clients.unicorecms2.ru</span>
+                        </div>
+                        <div class="template-card__mock-body">
+                            <img class="template-card__mock-img" src="img/new-web.png" alt="Превью шаблона Dragon" loading="lazy">
+                        </div>
+                    </a>
+                    <div class="addon-card__content">
+                        <p class="template-card__desc">Готовый шаблон для быстрого старта: красиво, аккуратно и “по‑взрослому”. Подходит под игровые проекты и коммерческие страницы.</p>
+                        <div class="template-card__features" aria-label="Особенности шаблона">
+                            <div class="template-feature"><i data-lucide="smartphone"></i><span>Полностью адаптивный</span></div>
+                            <div class="template-feature"><i data-lucide="layers"></i><span>Секции уже собраны</span></div>
+                            <div class="template-feature"><i data-lucide="mouse-pointer-click"></i><span>CTA и конверсия</span></div>
+                        </div>
+                        <div class="template-card__actions">
+                            <a href="http://clients.unicorecms2.ru" target="_blank" rel="noopener noreferrer" class="button button--outline button--full">
+                                <span class="button__icon"><i data-lucide="eye"></i></span>
+                                <span>Посмотреть</span>
+                            </a>
+                            <a href="https://t.me/nikita497926" class="button button--primary button--full">
+                                <span class="button__icon"><i data-lucide="credit-card"></i></span>
+                                <span>Купить</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -352,7 +426,7 @@
                 <div class="payment-card">
                     <div class="payment-card__shine"></div>
                     <div class="payment-card__header">
-                        <div class="payment-card__icon">💳</div>
+                        <div class="payment-card__icon"><i data-lucide="credit-card"></i></div>
                         <h3>Модуль "ЮKassa"</h3>
                         <span class="payment-card__price">2.500 ₽</span>
                     </div>
@@ -363,7 +437,7 @@
                             <li>Поддержка всех методов</li>
                         </ul>
                         <a href="https://t.me/nikita497926" class="button button--primary button--full">
-                            <span class="button__icon">💳</span>
+                            <span class="button__icon"><i data-lucide="credit-card"></i></span>
                             <span>Заказать</span>
                         </a>
                     </div>
@@ -373,7 +447,7 @@
                 <div class="payment-card">
                     <div class="payment-card__shine"></div>
                     <div class="payment-card__header">
-                        <div class="payment-card__icon">💳</div>
+                        <div class="payment-card__icon"><i data-lucide="credit-card"></i></div>
                         <h3>Модуль "AAIO"</h3>
                         <span class="payment-card__price">2.500 ₽</span>
                     </div>
@@ -384,7 +458,7 @@
                             <li>Поддержка всех методов</li>
                         </ul>
                         <a href="https://t.me/nikita497926" class="button button--primary button--full">
-                            <span class="button__icon">💳</span>
+                            <span class="button__icon"><i data-lucide="credit-card"></i></span>
                             <span>Заказать</span>
                         </a>
                     </div>
@@ -394,7 +468,7 @@
                 <div class="payment-card">
                     <div class="payment-card__shine"></div>
                     <div class="payment-card__header">
-                        <div class="payment-card__icon">💳</div>
+                        <div class="payment-card__icon"><i data-lucide="credit-card"></i></div>
                         <h3>Модуль "CloudPayments"</h3>
                         <span class="payment-card__price">2.500 ₽</span>
                     </div>
@@ -405,7 +479,7 @@
                             <li>Поддержка всех методов</li>
                         </ul>
                         <a href="https://t.me/nikita497926" class="button button--primary button--full">
-                            <span class="button__icon">💳</span>
+                            <span class="button__icon"><i data-lucide="credit-card"></i></span>
                             <span>Заказать</span>
                         </a>
                     </div>
@@ -415,7 +489,7 @@
                 <div class="payment-card">
                     <div class="payment-card__shine"></div>
                     <div class="payment-card__header">
-                        <div class="payment-card__icon">💳</div>
+                        <div class="payment-card__icon"><i data-lucide="credit-card"></i></div>
                         <h3>Модуль "Lava"</h3>
                         <span class="payment-card__price">2.500 ₽</span>
                     </div>
@@ -426,7 +500,7 @@
                             <li>Поддержка всех методов</li>
                         </ul>
                         <a href="https://t.me/nikita497926" class="button button--primary button--full">
-                            <span class="button__icon">💳</span>
+                            <span class="button__icon"><i data-lucide="credit-card"></i></span>
                             <span>Заказать</span>
                         </a>
                     </div>
@@ -434,7 +508,7 @@
                 <div class="payment-card">
                     <div class="payment-card__shine"></div>
                     <div class="payment-card__header">
-                        <div class="payment-card__icon">💳</div>
+                        <div class="payment-card__icon"><i data-lucide="credit-card"></i></div>
                         <h3>Модуль "WebMoney"</h3>
                         <span class="payment-card__price">2.500 ₽</span>
                     </div>
@@ -445,7 +519,7 @@
                             <li>Мгновенные переводы</li>
                         </ul>
                         <a href="https://t.me/nikita497926" class="button button--primary button--full">
-                            <span class="button__icon">💳</span>
+                            <span class="button__icon"><i data-lucide="credit-card"></i></span>
                             <span>Заказать</span>
                         </a>
                     </div>
@@ -453,7 +527,7 @@
                 <div class="payment-card">
                     <div class="payment-card__shine"></div>
                     <div class="payment-card__header">
-                        <div class="payment-card__icon">💳</div>
+                        <div class="payment-card__icon"><i data-lucide="credit-card"></i></div>
                         <h3>Модуль "CryptoPay"</h3>
                         <span class="payment-card__price">2.500 ₽</span>
                     </div>
@@ -464,7 +538,7 @@
                             <li>Мгновенные переводы</li>
                         </ul>
                         <a href="https://t.me/nikita497926" class="button button--primary button--full">
-                            <span class="button__icon">💳</span>
+                            <span class="button__icon"><i data-lucide="credit-card"></i></span>
                             <span>Заказать</span>
                         </a>
                     </div>
@@ -488,7 +562,7 @@
                 <div class="addon-card">
                     <div class="addon-card__shine"></div>
                     <div class="addon-card__header">
-                        <div class="addon-card__icon">🌍</div>
+                        <div class="addon-card__icon"><i data-lucide="globe"></i></div>
                         <h3>WorldRender - 1.7.10</h3>
                         <span class="addon-card__price">2.000 ₽</span>
                     </div>
@@ -499,7 +573,7 @@
                             <li>Оптимизация производительности</li>
                         </ul>
                         <a href="https://t.me/nikita497926" class="button button--primary button--full">
-                            <span class="button__icon">💳</span>
+                            <span class="button__icon"><i data-lucide="credit-card"></i></span>
                             <span>Заказать</span>
                         </a>
                     </div>
@@ -509,7 +583,7 @@
                 <div class="addon-card">
                     <div class="addon-card__shine"></div>
                     <div class="addon-card__header">
-                        <div class="addon-card__icon">🔄</div>
+                        <div class="addon-card__icon"><i data-lucide="refresh-cw"></i></div>
                         <h3>CustomTabList - 1.7.10</h3>
                         <span class="addon-card__price">2.000 ₽</span>
                     </div>
@@ -520,7 +594,7 @@
                             <li>Интеграция с системой</li>
                         </ul>
                         <a href="https://t.me/nikita497926" class="button button--primary button--full">
-                            <span class="button__icon">💳</span>
+                            <span class="button__icon"><i data-lucide="credit-card"></i></span>
                             <span>Заказать</span>
                         </a>
                     </div>
@@ -530,7 +604,7 @@
                 <div class="addon-card">
                     <div class="addon-card__shine"></div>
                     <div class="addon-card__header">
-                        <div class="addon-card__icon">💬</div>
+                        <div class="addon-card__icon"><i data-lucide="message-circle"></i></div>
                         <h3>AdvancedChat - 1.7.10</h3>
                         <span class="addon-card__price">4.000 ₽</span>
                     </div>
@@ -541,7 +615,7 @@
                             <li>Фильтрация контента</li>
                         </ul>
                         <a href="https://t.me/nikita497926" class="button button--primary button--full">
-                            <span class="button__icon">💳</span>
+                            <span class="button__icon"><i data-lucide="credit-card"></i></span>
                             <span>Заказать</span>
                         </a>
                     </div>
@@ -551,7 +625,7 @@
                 <div class="addon-card">
                     <div class="addon-card__shine"></div>
                     <div class="addon-card__header">
-                        <div class="addon-card__icon">⚡</div>
+                        <div class="addon-card__icon"><i data-lucide="zap"></i></div>
                         <h3>Серверное ядро - 1.7.10</h3>
                         <span class="addon-card__price">6.500 ₽</span>
                     </div>
@@ -562,7 +636,7 @@
                             <li>Обновленные библиотеки</li>
                         </ul>
                         <a href="https://t.me/nikita497926" class="button button--primary button--full">
-                            <span class="button__icon">💳</span>
+                            <span class="button__icon"><i data-lucide="credit-card"></i></span>
                             <span>Заказать</span>
                         </a>
                     </div>
@@ -572,7 +646,7 @@
                 <div class="addon-card">
                     <div class="addon-card__shine"></div>
                     <div class="addon-card__header">
-                        <div class="addon-card__icon">⚡</div>
+                        <div class="addon-card__icon"><i data-lucide="zap"></i></div>
                         <h3>Мод "Персонализация - 1.7.10"</h3>
                         <span class="addon-card__price">7.000 ₽</span>
                     </div>
@@ -583,7 +657,7 @@
                             <li>Расширенные настройки</li>
                         </ul>
                         <a href="https://t.me/nikita497926" class="button button--primary button--full">
-                            <span class="button__icon">💳</span>
+                            <span class="button__icon"><i data-lucide="credit-card"></i></span>
                             <span>Заказать</span>
                         </a>
                     </div>
@@ -593,7 +667,7 @@
                 <div class="addon-card">
                     <div class="addon-card__shine"></div>
                     <div class="addon-card__header">
-                        <div class="addon-card__icon">⚡</div>
+                        <div class="addon-card__icon"><i data-lucide="zap"></i></div>
                         <h3>Мод "ArtMod - 1.7.10"</h3>
                         <span class="addon-card__price">2.000 ₽</span>
                     </div>
@@ -604,7 +678,7 @@
                             <li>Уникальный дизайн</li>
                         </ul>
                         <a href="https://t.me/nikita497926" class="button button--primary button--full">
-                            <span class="button__icon">💳</span>
+                            <span class="button__icon"><i data-lucide="credit-card"></i></span>
                             <span>Заказать</span>
                         </a>
                     </div>
@@ -614,7 +688,7 @@
                 <div class="addon-card">
                     <div class="addon-card__shine"></div>
                     <div class="addon-card__header">
-                        <div class="addon-card__icon">⚡</div>
+                        <div class="addon-card__icon"><i data-lucide="zap"></i></div>
                         <h3>Мод "BrainTweaker - 1.7.10"</h3>
                         <span class="addon-card__price">3.500 ₽</span>
                     </div>
@@ -625,7 +699,7 @@
                             <li>Создание крафтов через верстаки в разных модах</li>
                         </ul>
                         <a href="https://t.me/nikita497926" class="button button--primary button--full">
-                            <span class="button__icon">💳</span>
+                            <span class="button__icon"><i data-lucide="credit-card"></i></span>
                             <span>Заказать</span>
                         </a>
                     </div>
@@ -742,7 +816,7 @@
                         <h3 class="footer__title">Хостинг</h3>
                         <div class="footer__hosting">
                             <a href="https://www.hostland.ru/vds/?r=d90cc207" target="_blank" rel="noopener noreferrer" class="footer__hosting-link">
-                                <div class="footer__hosting-icon">🖥️</div>
+                                <div class="footer__hosting-icon"><i data-lucide="monitor"></i></div>
                                 <div class="footer__hosting-content">
                                     <span class="footer__hosting-name">Hostland VDS</span>
                                     <span class="footer__hosting-desc">Надежный хостинг</span>
@@ -753,11 +827,17 @@
                 </div>
             </div>
             <div class="footer__bottom">
-                <p>© 2025 UnicoreCMS 2.0. Все права защищены.</p>
+                <p>© 2026 UnicoreCMS 2.0. Все права защищены.</p>
             </div>
         </div>
     </footer>
 
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        if (window.lucide?.createIcons) {
+            window.lucide.createIcons();
+        }
+    </script>
     <script>
         // Мобильное меню
         const navToggle = document.querySelector('.nav__toggle');

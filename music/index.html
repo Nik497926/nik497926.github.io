@@ -8,6 +8,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Make lucide icons scale like emoji font-size */
+        svg.lucide {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.125em;
+        }
+    </style>
 </head>
 <body>
     <div class="music-container">
@@ -98,28 +106,28 @@
                         <!-- Дополнительная информация -->
                         <div class="artist-meta">
                             <div class="meta-item">
-                                <div class="meta-icon">💻</div>
+                                <div class="meta-icon"><i data-lucide="laptop"></i></div>
                                 <div class="meta-text">
                                     <span class="meta-label">Профессия</span>
                                     <span class="meta-value">Айтишник</span>
                                 </div>
                             </div>
                             <div class="meta-item">
-                                <div class="meta-icon">🎵</div>
+                                <div class="meta-icon"><i data-lucide="music"></i></div>
                                 <div class="meta-text">
                                     <span class="meta-label">Жанр</span>
                                     <span class="meta-value">Pop Russia</span>
                                 </div>
                             </div>
                             <div class="meta-item">
-                                <div class="meta-icon">✨</div>
+                                <div class="meta-icon"><i data-lucide="sparkles"></i></div>
                                 <div class="meta-text">
                                     <span class="meta-label">Творчество</span>
                                     <span class="meta-value">По вдохновению</span>
                                 </div>
                             </div>
                             <div class="meta-item">
-                                <div class="meta-icon">📍</div>
+                                <div class="meta-icon"><i data-lucide="map-pin"></i></div>
                                 <div class="meta-text">
                                     <span class="meta-label">Платформа</span>
                                     <span class="meta-value">Яндекс.Музыка</span>
@@ -157,11 +165,11 @@
             <div class="tracks-section">
                 <div class="section-divider">
                     <div class="divider-line"></div>
-                    <div class="divider-icon">🎼</div>
+                    <div class="divider-icon"><i data-lucide="music"></i></div>
                     <div class="divider-line"></div>
                 </div>
                 <h2 class="tracks-title">
-                    <span class="title-icon">🎵</span>
+                    <span class="title-icon"><i data-lucide="music-2"></i></span>
                     <span>Мои треки</span>
                 </h2>
                 
@@ -225,6 +233,35 @@
                             </a>
                         </div>
                     </div>
+                    <!-- Трек 3 -->
+                    <div class="track-card">
+                        <div class="track-glow"></div>
+                        <div class="track-header">
+                            <div class="track-number">03</div>
+                            <h3 class="track-name">Не верю в любовь</h3>
+                        </div>
+                        <div class="track-player">
+                            <iframe 
+                                frameborder="0" 
+                                allow="clipboard-write" 
+                                style="border:none;width:100%;height:244px;" 
+                                width="100%" 
+                                height="244" 
+                                src="https://music.yandex.ru/iframe/album/39856303/track/146451192"
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                        <div class="track-footer">
+                            <a href="https://music.yandex.ru/track/146451192" target="_blank" rel="noopener noreferrer" class="track-link">
+                                Открыть в Яндекс.Музыке
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -232,26 +269,26 @@
             <div class="about-section">
                 <div class="section-divider">
                     <div class="divider-line"></div>
-                    <div class="divider-icon">🎹</div>
+                    <div class="divider-icon"><i data-lucide="music-3"></i></div>
                     <div class="divider-line"></div>
                 </div>
                 <h2 class="section-title">
-                    <span class="title-icon">✨</span>
+                    <span class="title-icon"><i data-lucide="sparkles"></i></span>
                     <span>О творчестве</span>
                 </h2>
                 <div class="about-content">
                     <div class="about-card">
-                        <div class="about-icon">💡</div>
+                        <div class="about-icon"><i data-lucide="lightbulb"></i></div>
                         <h3>Вдохновение</h3>
                         <p>Музыка рождается спонтанно, когда приходит момент. Это не работа по расписанию, а творческий порыв души.</p>
                     </div>
                     <div class="about-card">
-                        <div class="about-icon">🎯</div>
+                        <div class="about-icon"><i data-lucide="target"></i></div>
                         <h3>Философия</h3>
                         <p>Каждая композиция — это история, эмоция, переживание. Музыка как способ выразить то, что сложно сказать словами.</p>
                     </div>
                     <div class="about-card">
-                        <div class="about-icon">🚀</div>
+                        <div class="about-icon"><i data-lucide="rocket"></i></div>
                         <h3>Развитие</h3>
                         <p>Постоянно экспериментирую со звуком, ищу новые формы выражения и совершенствую своё мастерство.</p>
                     </div>
@@ -262,11 +299,11 @@
             <div class="facts-section">
                 <div class="section-divider">
                     <div class="divider-line"></div>
-                    <div class="divider-icon">⭐</div>
+                    <div class="divider-icon"><i data-lucide="star"></i></div>
                     <div class="divider-line"></div>
                 </div>
                 <h2 class="section-title">
-                    <span class="title-icon">📊</span>
+                    <span class="title-icon"><i data-lucide="bar-chart-3"></i></span>
                     <span>Интересные факты</span>
                 </h2>
                 <div class="facts-grid">
@@ -309,7 +346,7 @@
             <footer class="music-footer">
                 <div class="footer-content">
                     <div class="footer-text">
-                        <p>© 2025 S.One. Все права защищены.</p>
+                        <p>© 2026 S.One. Все права защищены.</p>
                         <p class="footer-subtitle">Музыка создаётся с любовью и вдохновением</p>
                     </div>
                     <div class="footer-links">
@@ -322,6 +359,12 @@
         </div>
     </div>
 
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script src="script.js"></script>
+    <script>
+        if (window.lucide?.createIcons) {
+            window.lucide.createIcons();
+        }
+    </script>
 </body>
 </html>
