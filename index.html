@@ -47,6 +47,10 @@
                 <span class="conn-popover__label">Регион соединения</span>
                 <span class="conn-popover__value" data-conn-region>—</span>
             </div>
+            <div class="conn-popover__row">
+                <span class="conn-popover__label">Ваш город</span>
+                <span class="conn-popover__value" data-conn-city>—</span>
+            </div>
         </div>
     </div>
 
@@ -916,6 +920,7 @@
             const toastIp = document.querySelector('[data-conn-ip]');
             const toastCountry = document.querySelector('[data-conn-country]');
             const toastRegion = document.querySelector('[data-conn-region]');
+            const toastCity = document.querySelector('[data-conn-city]');
 
             const hideBoot = () => {
                 if (bootOverlay) bootOverlay.classList.add('boot-overlay--done');
@@ -952,7 +957,7 @@
             const ipEl = document.getElementById('ip');
             const countryEl = document.getElementById('country');
             const regionEl = document.getElementById('region');
-
+            const cityEl = document.getElementById('city');
             const safeText = (v, fallback) => (v && String(v).trim() ? String(v) : fallback);
 
             setBootText('Получаем информацию о подключении…');
