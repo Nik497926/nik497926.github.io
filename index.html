@@ -944,8 +944,40 @@
             const toast = document.querySelector('[data-conn-toast]');
             const toastText = document.querySelector('[data-conn-toast-text]');
 
+            const hideBoot = () => {
+                if (bootOverlay) bootOverlay.classList.add('boot-overlay--done');
+                document.documentElement.classList.remove('is-booting');
+                setTimeout(() => {
+                    if (bootOverlay) bootOverlay.remove();
+                }, 700);
+            };
+
+            const setBootText = (text) => {
+                if (bootText) bootText.textContent = text;
+            };
+
+            const showToast = (kind, text) => {
+                if (!toast || !toastText) return;
+                toast.classList.remove('conn-toast--hidden', 'conn-toast--ok', 'conn-toast--error', 'conn-toast--loading');
+                toast.classList.add(`conn-toast--${kind}`);
+                toastText.textContent = text;
+            };
+
+            // Hard fallback: never block the site forever
+            const hardUnblockTimer = setTimeout(() => {
+                setBootText('Таймаут проверки. Открываем сайт…');
+                showToast('error', 'Проверка соединения: таймаут');
+                hideBoot();
+            }, 12000);
+
             const root = document.querySelector('[data-geodns]');
-            if (!root) return;
+            if (!root) {
+                setBootText('GeoDNS блок не найден. Открываем сайт…');
+                showToast('error', 'GeoDNS блок не найден');
+                clearTimeout(hardUnblockTimer);
+                setTimeout(hideBoot, 300);
+                return;
+            }
 
             const statusEl = root.querySelector('[data-geodns-status]');
             const statusTextEl = root.querySelector('[data-geodns-status-text]');
@@ -961,53 +993,39 @@
                 statusTextEl.textContent = text;
             };
 
-            const setBootText = (text) => {
-                if (bootText) bootText.textContent = text;
-            };
-
-            const showToast = (kind, text) => {
-                if (!toast || !toastText) return;
-                toast.classList.remove('conn-toast--hidden', 'conn-toast--ok', 'conn-toast--error', 'conn-toast--loading');
-                toast.classList.add(`conn-toast--${kind}`);
-                toastText.textContent = text;
-            };
-
-            const hideBoot = () => {
-                if (bootOverlay) bootOverlay.classList.add('boot-overlay--done');
-                document.documentElement.classList.remove('is-booting');
-                setTimeout(() => {
-                    if (bootOverlay) bootOverlay.remove();
-                }, 700);
-            };
-
             const safeText = (v, fallback) => (v && String(v).trim() ? String(v) : fallback);
-
-            const controller = new AbortController();
-            const timeout = setTimeout(() => controller.abort(), 8000);
 
             setBootText('Получаем информацию о подключении…');
             showToast('loading', 'Проверяем соединение…');
 
-            fetch('/api/geo', { signal: controller.signal })
-                .then((r) => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))))
+            const withTimeout = (promise, ms) =>
+                Promise.race([
+                    promise,
+                    new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), ms)),
+                ]);
+
+            withTimeout(
+                fetch('/api/geo').then((r) => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`)))),
+                8000
+            )
                 .then((data) => {
-                    clearTimeout(timeout);
                     if (ipEl) ipEl.textContent = safeText(data?.clientIP, 'не определён');
                     if (countryEl) countryEl.textContent = safeText(data?.country, 'не определена');
                     if (regionEl) regionEl.textContent = safeText(data?.location, 'не определён');
                     setStatus('ok', 'GeoDNS система активна');
                     setBootText('Готово. Открываем сайт…');
                     showToast('ok', 'Успешное соединение');
+                    clearTimeout(hardUnblockTimer);
                     setTimeout(hideBoot, 450);
                 })
                 .catch(() => {
-                    clearTimeout(timeout);
                     if (ipEl) ipEl.textContent = 'ошибка загрузки';
                     if (countryEl) countryEl.textContent = '—';
                     if (regionEl) regionEl.textContent = '—';
                     setStatus('error', 'Не удалось получить данные');
                     setBootText('Не удалось получить информацию. Открываем сайт…');
                     showToast('error', 'Нет соединения с GeoDNS API');
+                    clearTimeout(hardUnblockTimer);
                     setTimeout(hideBoot, 700);
                 });
         })();
