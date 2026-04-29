@@ -979,10 +979,10 @@
                 .then((data) => {
                     if (toastIp) toastIp.textContent = safeText(data?.clientIP, '—');
                     if (toastCountry) toastCountry.textContent = safeText(data?.country, '—');
-                    if (toastRegion) toastRegion.textContent = safeText(data?.location, '—');
+                    if (toastRegion) toastRegion.textContent = safeText(data?.city ?? data?.location, '—');
                     if (ipEl) ipEl.textContent = safeText(data?.clientIP, 'не определён');
                     if (countryEl) countryEl.textContent = safeText(data?.country, 'не определена');
-                    if (regionEl) regionEl.textContent = safeText(data?.location, 'не определён');
+                    if (regionEl) regionEl.textContent = safeText(data?.city ?? data?.location, 'не определён');
                     setBootText('Готово. Открываем сайт…');
                     showToast('ok', 'Успешное соединение');
                     clearTimeout(hardUnblockTimer);
