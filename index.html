@@ -20,6 +20,22 @@
     </style>
 </head>
 <body>
+    <!-- Boot overlay -->
+    <div class="boot-overlay" data-boot-overlay aria-live="polite" aria-busy="true">
+        <div class="boot-overlay__card">
+            <div class="boot-overlay__spinner" aria-hidden="true"></div>
+            <h2 class="boot-overlay__title">Загрузка…</h2>
+            <p class="boot-overlay__text" data-boot-text>Идёт загрузка сайта</p>
+            <div class="boot-overlay__hint">Проверяем подключение и GeoDNS</div>
+        </div>
+    </div>
+
+    <!-- Connection toast -->
+    <div class="conn-toast conn-toast--hidden" data-conn-toast role="status" aria-live="polite">
+        <span class="conn-toast__dot" aria-hidden="true"></span>
+        <span class="conn-toast__text" data-conn-toast-text>Соединение…</span>
+    </div>
+
     <!-- Навигация -->
     <nav class="nav">
         <div class="container nav__container">
@@ -140,6 +156,52 @@
             </div>
         </div>
     </section>
+
+    <!-- GeoDNS / Подключение -->
+    <!--<section id="geodns" class="geodns">
+        <div class="geodns__bg">
+            <div class="geodns__bg-gradient"></div>
+            <div class="geodns__bg-grid"></div>
+        </div>
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Подключение (GeoDNS)</h2>
+                <p class="section__subtitle">Проверь, куда тебя направляет система и какие сервера будут использоваться</p>
+            </div>
+
+            <div class="geodns-card" data-geodns>
+                <div class="geodns-card__shine"></div>
+                <div class="geodns-card__header">
+                    <div class="geodns-card__title">
+                        <span class="geodns-card__icon"><i data-lucide="globe-2"></i></span>
+                        <div>
+                            <h3>UnicoreCMS2.ru</h3>
+                            <p class="geodns-card__subtitle">Статус подключения и маршрутизация</p>
+                        </div>
+                    </div>
+                    <div class="geodns-badge geodns-badge--loading" data-geodns-status>
+                        <span class="geodns-badge__dot"></span>
+                        <span data-geodns-status-text>Загрузка…</span>
+                    </div>
+                </div>
+
+                <div class="geodns-grid">
+                    <div class="geodns-item">
+                        <div class="geodns-item__label">Ваш IP</div>
+                        <div class="geodns-item__value" id="ip">загрузка…</div>
+                    </div>
+                    <div class="geodns-item">
+                        <div class="geodns-item__label">Страна</div>
+                        <div class="geodns-item__value" id="country">определение…</div>
+                    </div>
+                    <div class="geodns-item">
+                        <div class="geodns-item__label">Регион</div>
+                        <div class="geodns-item__value" id="region">определение…</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>-->
 
     <!-- Основные услуги -->
     <section id="services" class="services">
@@ -870,6 +932,85 @@
                 });
             });
         });
+    </script>
+
+    <script>
+        (function () {
+            document.documentElement.classList.add('is-booting');
+
+            const bootOverlay = document.querySelector('[data-boot-overlay]');
+            const bootText = document.querySelector('[data-boot-text]');
+
+            const toast = document.querySelector('[data-conn-toast]');
+            const toastText = document.querySelector('[data-conn-toast-text]');
+
+            const root = document.querySelector('[data-geodns]');
+            if (!root) return;
+
+            const statusEl = root.querySelector('[data-geodns-status]');
+            const statusTextEl = root.querySelector('[data-geodns-status-text]');
+
+            const ipEl = document.getElementById('ip');
+            const countryEl = document.getElementById('country');
+            const regionEl = document.getElementById('region');
+
+            const setStatus = (kind, text) => {
+                if (!statusEl || !statusTextEl) return;
+                statusEl.classList.remove('geodns-badge--loading', 'geodns-badge--ok', 'geodns-badge--error');
+                statusEl.classList.add(`geodns-badge--${kind}`);
+                statusTextEl.textContent = text;
+            };
+
+            const setBootText = (text) => {
+                if (bootText) bootText.textContent = text;
+            };
+
+            const showToast = (kind, text) => {
+                if (!toast || !toastText) return;
+                toast.classList.remove('conn-toast--hidden', 'conn-toast--ok', 'conn-toast--error', 'conn-toast--loading');
+                toast.classList.add(`conn-toast--${kind}`);
+                toastText.textContent = text;
+            };
+
+            const hideBoot = () => {
+                if (bootOverlay) bootOverlay.classList.add('boot-overlay--done');
+                document.documentElement.classList.remove('is-booting');
+                setTimeout(() => {
+                    if (bootOverlay) bootOverlay.remove();
+                }, 700);
+            };
+
+            const safeText = (v, fallback) => (v && String(v).trim() ? String(v) : fallback);
+
+            const controller = new AbortController();
+            const timeout = setTimeout(() => controller.abort(), 8000);
+
+            setBootText('Получаем информацию о подключении…');
+            showToast('loading', 'Проверяем соединение…');
+
+            fetch('/api/geo', { signal: controller.signal })
+                .then((r) => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))))
+                .then((data) => {
+                    clearTimeout(timeout);
+                    if (ipEl) ipEl.textContent = safeText(data?.clientIP, 'не определён');
+                    if (countryEl) countryEl.textContent = safeText(data?.country, 'не определена');
+                    if (regionEl) regionEl.textContent = safeText(data?.location, 'не определён');
+                    setStatus('ok', 'GeoDNS система активна');
+                    setBootText('Готово. Открываем сайт…');
+                    showToast('ok', 'Успешное соединение');
+                    setTimeout(hideBoot, 450);
+                })
+                .catch(() => {
+                    clearTimeout(timeout);
+                    if (ipEl) ipEl.textContent = 'ошибка загрузки';
+                    if (countryEl) countryEl.textContent = '—';
+                    if (regionEl) regionEl.textContent = '—';
+                    setStatus('error', 'Не удалось получить данные');
+                    setBootText('Не удалось получить информацию. Открываем сайт…');
+                    showToast('error', 'Нет соединения с GeoDNS API');
+                    setTimeout(hideBoot, 700);
+                });
+        })();
     </script>
 
     <!-- Метрики -->
