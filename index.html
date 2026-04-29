@@ -157,52 +157,6 @@
         </div>
     </section>
 
-    <!-- GeoDNS / Подключение -->
-    <!--<section id="geodns" class="geodns">
-        <div class="geodns__bg">
-            <div class="geodns__bg-gradient"></div>
-            <div class="geodns__bg-grid"></div>
-        </div>
-        <div class="container">
-            <div class="section__header">
-                <h2 class="section__title">Подключение (GeoDNS)</h2>
-                <p class="section__subtitle">Проверь, куда тебя направляет система и какие сервера будут использоваться</p>
-            </div>
-
-            <div class="geodns-card" data-geodns>
-                <div class="geodns-card__shine"></div>
-                <div class="geodns-card__header">
-                    <div class="geodns-card__title">
-                        <span class="geodns-card__icon"><i data-lucide="globe-2"></i></span>
-                        <div>
-                            <h3>UnicoreCMS2.ru</h3>
-                            <p class="geodns-card__subtitle">Статус подключения и маршрутизация</p>
-                        </div>
-                    </div>
-                    <div class="geodns-badge geodns-badge--loading" data-geodns-status>
-                        <span class="geodns-badge__dot"></span>
-                        <span data-geodns-status-text>Загрузка…</span>
-                    </div>
-                </div>
-
-                <div class="geodns-grid">
-                    <div class="geodns-item">
-                        <div class="geodns-item__label">Ваш IP</div>
-                        <div class="geodns-item__value" id="ip">загрузка…</div>
-                    </div>
-                    <div class="geodns-item">
-                        <div class="geodns-item__label">Страна</div>
-                        <div class="geodns-item__value" id="country">определение…</div>
-                    </div>
-                    <div class="geodns-item">
-                        <div class="geodns-item__label">Регион</div>
-                        <div class="geodns-item__value" id="region">определение…</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>-->
-
     <!-- Основные услуги -->
     <section id="services" class="services">
         <div class="services__bg">
@@ -940,6 +894,8 @@
 
             const bootOverlay = document.querySelector('[data-boot-overlay]');
             const bootText = document.querySelector('[data-boot-text]');
+            const bootStartedAt = Date.now();
+            const minBootMs = 1800;
 
             const toast = document.querySelector('[data-conn-toast]');
             const toastText = document.querySelector('[data-conn-toast-text]');
@@ -950,6 +906,12 @@
                 setTimeout(() => {
                     if (bootOverlay) bootOverlay.remove();
                 }, 700);
+            };
+
+            const scheduleHideBoot = (extraDelayMs) => {
+                const elapsed = Date.now() - bootStartedAt;
+                const remaining = Math.max(minBootMs - elapsed, 0);
+                setTimeout(hideBoot, remaining + (extraDelayMs || 0));
             };
 
             const setBootText = (text) => {
@@ -968,30 +930,11 @@
                 setBootText('Таймаут проверки. Открываем сайт…');
                 showToast('error', 'Проверка соединения: таймаут');
                 hideBoot();
-            }, 12000);
-
-            const root = document.querySelector('[data-geodns]');
-            if (!root) {
-                setBootText('GeoDNS блок не найден. Открываем сайт…');
-                showToast('error', 'GeoDNS блок не найден');
-                clearTimeout(hardUnblockTimer);
-                setTimeout(hideBoot, 300);
-                return;
-            }
-
-            const statusEl = root.querySelector('[data-geodns-status]');
-            const statusTextEl = root.querySelector('[data-geodns-status-text]');
+            }, 15000);
 
             const ipEl = document.getElementById('ip');
             const countryEl = document.getElementById('country');
             const regionEl = document.getElementById('region');
-
-            const setStatus = (kind, text) => {
-                if (!statusEl || !statusTextEl) return;
-                statusEl.classList.remove('geodns-badge--loading', 'geodns-badge--ok', 'geodns-badge--error');
-                statusEl.classList.add(`geodns-badge--${kind}`);
-                statusTextEl.textContent = text;
-            };
 
             const safeText = (v, fallback) => (v && String(v).trim() ? String(v) : fallback);
 
@@ -1004,29 +947,30 @@
                     new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), ms)),
                 ]);
 
+            const GEO_API_URL = 'https://unicorecms2.ru/api/geo';
+
             withTimeout(
-                fetch('/api/geo').then((r) => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`)))),
+                fetch(GEO_API_URL, { cache: 'no-store' })
+                    .then((r) => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`)))),
                 8000
             )
                 .then((data) => {
                     if (ipEl) ipEl.textContent = safeText(data?.clientIP, 'не определён');
                     if (countryEl) countryEl.textContent = safeText(data?.country, 'не определена');
                     if (regionEl) regionEl.textContent = safeText(data?.location, 'не определён');
-                    setStatus('ok', 'GeoDNS система активна');
                     setBootText('Готово. Открываем сайт…');
                     showToast('ok', 'Успешное соединение');
                     clearTimeout(hardUnblockTimer);
-                    setTimeout(hideBoot, 450);
+                    scheduleHideBoot(450);
                 })
                 .catch(() => {
                     if (ipEl) ipEl.textContent = 'ошибка загрузки';
                     if (countryEl) countryEl.textContent = '—';
                     if (regionEl) regionEl.textContent = '—';
-                    setStatus('error', 'Не удалось получить данные');
                     setBootText('Не удалось получить информацию. Открываем сайт…');
-                    showToast('error', 'Нет соединения с GeoDNS API');
+                    showToast('error', 'GeoDNS API недоступен');
                     clearTimeout(hardUnblockTimer);
-                    setTimeout(hideBoot, 700);
+                    scheduleHideBoot(700);
                 });
         })();
     </script>
