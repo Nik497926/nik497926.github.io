@@ -34,6 +34,20 @@
     <div class="conn-toast conn-toast--hidden" data-conn-toast role="status" aria-live="polite">
         <span class="conn-toast__dot" aria-hidden="true"></span>
         <span class="conn-toast__text" data-conn-toast-text>Соединение…</span>
+        <div class="conn-popover" data-conn-popover aria-label="Информация о подключении">
+            <div class="conn-popover__row">
+                <span class="conn-popover__label">Ваш IP</span>
+                <span class="conn-popover__value" data-conn-ip>—</span>
+            </div>
+            <div class="conn-popover__row">
+                <span class="conn-popover__label">Страна</span>
+                <span class="conn-popover__value" data-conn-country>—</span>
+            </div>
+            <div class="conn-popover__row">
+                <span class="conn-popover__label">Регион соединения</span>
+                <span class="conn-popover__value" data-conn-region>—</span>
+            </div>
+        </div>
     </div>
 
     <!-- Навигация -->
@@ -899,6 +913,9 @@
 
             const toast = document.querySelector('[data-conn-toast]');
             const toastText = document.querySelector('[data-conn-toast-text]');
+            const toastIp = document.querySelector('[data-conn-ip]');
+            const toastCountry = document.querySelector('[data-conn-country]');
+            const toastRegion = document.querySelector('[data-conn-region]');
 
             const hideBoot = () => {
                 if (bootOverlay) bootOverlay.classList.add('boot-overlay--done');
@@ -955,6 +972,9 @@
                 8000
             )
                 .then((data) => {
+                    if (toastIp) toastIp.textContent = safeText(data?.clientIP, '—');
+                    if (toastCountry) toastCountry.textContent = safeText(data?.country, '—');
+                    if (toastRegion) toastRegion.textContent = safeText(data?.location, '—');
                     if (ipEl) ipEl.textContent = safeText(data?.clientIP, 'не определён');
                     if (countryEl) countryEl.textContent = safeText(data?.country, 'не определена');
                     if (regionEl) regionEl.textContent = safeText(data?.location, 'не определён');
@@ -964,6 +984,9 @@
                     scheduleHideBoot(450);
                 })
                 .catch(() => {
+                    if (toastIp) toastIp.textContent = '—';
+                    if (toastCountry) toastCountry.textContent = '—';
+                    if (toastRegion) toastRegion.textContent = '—';
                     if (ipEl) ipEl.textContent = 'ошибка загрузки';
                     if (countryEl) countryEl.textContent = '—';
                     if (regionEl) regionEl.textContent = '—';
